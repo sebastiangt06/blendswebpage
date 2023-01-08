@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
-import headerImg from "../assets/img/header.png";
+import headerImg from "../assets/img/logoblends2.png";
 import TrackVisibility from "react-on-screen";
 import "animate.css";
 import { HashLink } from "react-router-hash-link";
@@ -35,7 +35,7 @@ export const Banner = () => {
     if (isDeleting) {
       setDelta((prevDelta) => prevDelta / 2);
     }
-    if (!isDeleting && updateText == fullText) {
+    if (!isDeleting && updateText === fullText) {
       setIsDeleting(true);
       setDelta(period);
     } else if (isDeleting && updateText === "") {
@@ -71,7 +71,7 @@ export const Banner = () => {
                       <span className="wrap"> {text}</span>
                     </h1>
                     <p>
-                    I'm a Colombian web developer, i'm in love with the web design and in the fact of being able to create beautiful web pages with my skills, i also love the video games and the movies. If you wanna get in touch with me, let's do it!
+                    I'm a Colombian web developer, i'm in love with the web design and in the fact of being able to create beautiful web pages with my skills, i also love  video games and movies. If you wanna get in touch with me, let's do it!
                     </p>
                     <HashLink className="vdd2" to="#connect">
                       <button>
@@ -91,7 +91,7 @@ export const Banner = () => {
                       isVisible ? "animate__animated animate__zoomIn" : ""
                     }
                   >
-                    <img src={headerImg} alt="Header Img" />
+                    <img src={headerImg} alt="" />
                   </div>
                 )}
               </TrackVisibility>
