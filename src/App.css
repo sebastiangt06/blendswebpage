@@ -109,6 +109,7 @@ nav.navbar {
   transition:  0.32s ease-in-out;
   background-color: #571f85;
   background-image: url('/src/assets/img/navbar2.png');
+  
 }
 nav.navbar.scrolled{
   margin: 0px;
@@ -266,8 +267,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .banner {
   margin-top: 0;
   padding: 260px 0 100px 0;
-  background-image: url('./assets/img/bannerblends3.jpg');
+  background-image: url('./assets/img/bannerblends23.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
   
 }
 .banner .tagline {
