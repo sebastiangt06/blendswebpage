@@ -1,6 +1,9 @@
 :root{
   --bluegradient : linear-gradient(90.21deg, rgba(54, 85, 170, 0.8) -5.91%, rgba(47, 189, 177, 0.8) 111.58%);
   --prideviolet : #760089;
+  --lavender: #d5cfe1;
+  --pastelpink: #ffebf8;
+  ---ghostwhite: #fafaff;
 }
 /************ Custom Font ************/
 @font-face {
@@ -318,8 +321,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .banner button:hover svg {
   margin-left: 25px;
 }
-.banner img {
+.imgheader {
   animation: updown 3s linear infinite;
+}
+
+.bannerimg{
+  rotate: -7deg;
 }
 @keyframes updown {
     0% {
@@ -346,7 +353,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .skill-box{
-  background: #151515;
+  background: var(---ghostwhite);
   border-radius: 64px;
   text-align: center;
   padding: 60px 50px;
@@ -357,7 +364,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-weight: bold;
 }
 .skill p{
-  color: #B8B8B8;
+  color: #B8b8b8;
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5rem;

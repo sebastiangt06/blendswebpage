@@ -6,7 +6,7 @@ import TrackVisibility from "react-on-screen";
 import "animate.css";
 import { HashLink } from "react-router-hash-link";
 import { BrowserRouter as Router } from "react-router-dom";
-
+import bannerimg from '../assets/img/bannerimg.png'
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -51,7 +51,7 @@ export const Banner = () => {
     <Router>
       <section className="banner" id="home">
         <Container>
-          <Row className="aligh-items-center">
+          <Row className="align-items-center">
             <Col xs={12} md={6} xl={7}>
               <TrackVisibility>
                 {({ isVisible }) => (
@@ -60,25 +60,16 @@ export const Banner = () => {
                       isVisible ? "animate__animated animate__fadeIn" : ""
                     }
                   >
-                    <span className="tagline"> Welcome, adventure</span>
-                    <h1>
-                      {`¡Hi!, i'm Sebastian`}
-                      <span
-                        className="txt-rotate"
-                        dataPeriod="1000"
-                        data-rotate='[ "Web Developer"]'
-                      />
-                      <span className="wrap"> {text}</span>
-                    </h1>
-                    <p>
-                    I'm a Colombian web developer, i'm in love with the web design and in the fact of being able to create beautiful web pages with my skills, i also love  video games and movies. If you wanna get in touch with me, let's do it!
-                    </p>
-                    <HashLink className="vdd2" to="#connect">
+                    {/* <span className="tagline"> Welcome, adventure</span> */}
+                    <div className="bannerimg"><img src={bannerimg} alt=''></img>
+                    </div>
+                    
+                    {/* <HashLink className="vdd2" to="#connect">
                       <button>
                         Let's connect!
                         <ArrowRightCircle size={25} />
                       </button>
-                    </HashLink>
+                    </HashLink> */}
                   </div>
                 )}
               </TrackVisibility>
@@ -86,12 +77,12 @@ export const Banner = () => {
             <Col xs={12} md={6} xl={5}>
               <TrackVisibility>
                 {({ isVisible }) => (
-                  <div
+                  <div 
                     className={
-                      isVisible ? "animate__animated animate__zoomIn" : ""
+                      isVisible ? "animate__animated animate__zoomIn headerimg" : ""
                     }
                   >
-                    <img src={headerImg} alt="" />
+                    <img className="imgheader" src={headerImg} alt="" />
                   </div>
                 )}
               </TrackVisibility>
