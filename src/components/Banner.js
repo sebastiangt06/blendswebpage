@@ -1,95 +1,69 @@
-import { useState, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { ArrowRightCircle } from "react-bootstrap-icons";
-import headerImg from "../assets/img/logoblends2.png";
-import TrackVisibility from "react-on-screen";
+import React from "react";
+import { Row, Col } from "react-bootstrap";
 import "animate.css";
 import { HashLink } from "react-router-hash-link";
 import { BrowserRouter as Router } from "react-router-dom";
-import bannerimg from '../assets/img/bannerimg.png'
+import bannerimg from "../assets/img/bannerimg.png";
+import meter1 from "../assets/img/bannerblends12.jpg";
+import meter2 from "../assets/img/bannerblends23.jpg";
+import meter3 from "../assets/img/bannerblends32.jpg";
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
+
 export const Banner = () => {
-  const [loopNum, setLoopNum] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const toRotate = ["Web Developer"];
-  const [text, setText] = useState("");
-  const [index, setIndex] = useState(1);
-  const [delta, setDelta] = useState(300 - Math.random() * 100);
-  const period = 2000;
-  useEffect(() => {
-    let ticker = setInterval(() => {
-      tick();
-    }, delta);
 
-    return () => {
-      clearInterval(ticker);
-    };
-  }, [text]);
+  const images = [meter1, meter2, meter3];
 
-  const tick = () => {
-    let i = loopNum % toRotate.length;
-    let fullText = toRotate[i];
-    let updateText = isDeleting
-      ? fullText.substring(0, text.length - 1)
-      : fullText.substring(0, text.length + 1);
-    setText(updateText);
-    if (isDeleting) {
-      setDelta((prevDelta) => prevDelta / 2);
-    }
-    if (!isDeleting && updateText === fullText) {
-      setIsDeleting(true);
-      setDelta(period);
-    } else if (isDeleting && updateText === "") {
-      setIsDeleting(false);
-      setLoopNum(loopNum + 1);
-      setDelta(500);
-    } else {
-      setIndex((prevIndex) => prevIndex + 1);
-    }
-  };
+  const animation = { duration: 3000, easing: (t) => t };
+  const [opacities, setOpacities] = React.useState([]);
+
+  const [sliderRef] = useKeenSlider({
+    slides: images.length,
+    loop: true,
+    renderMode: "performance",
+    drag: false,
+    created(s) {
+      s.moveToIdx(1, true, animation);
+    },
+    updated(s) {
+      s.moveToIdx(s.track.details.abs + 1, true, animation);
+    },
+    animationEnded(s) {
+      s.moveToIdx(s.track.details.abs + 1, true, animation);
+    },
+    detailsChanged(s) {
+      const new_opacities = s.track.details.slides.map(
+        (slide) => slide.portion
+      );
+      setOpacities(new_opacities);
+    },
+  });
 
   return (
     <Router>
-      <section className="banner" id="home">
-        <Container>
-          <Row className="align-items-center">
-            <Col xs={12} md={6} xl={7}>
-              <TrackVisibility>
-                {({ isVisible }) => (
-                  <div
-                    className={
-                      isVisible ? "animate__animated animate__fadeIn" : ""
-                    }
-                  >
-                    {/* <span className="tagline"> Welcome, adventure</span> */}
-                    <div className="bannerimg"><img src={bannerimg} alt=''></img>
-                    </div>
-                    
-                    {/* <HashLink className="vdd2" to="#connect">
-                      <button>
-                        Let's connect!
-                        <ArrowRightCircle size={25} />
-                      </button>
-                    </HashLink> */}
-                  </div>
-                )}
-              </TrackVisibility>
-            </Col>
-            <Col xs={12} md={6} xl={5}>
-              <TrackVisibility>
-                {({ isVisible }) => (
-                  <div 
-                    className={
-                      isVisible ? "animate__animated animate__zoomIn headerimg" : ""
-                    }
-                  >
-                    <img className="imgheader" src={headerImg} alt="" />
-                  </div>
-                )}
-              </TrackVisibility>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+      <div ref={sliderRef} className="fader">
+        {images.map((src, index) => (
+          <div
+            key={index}
+            className="fader__slide"
+            style={{ opacity: opacities[index] }}
+          >
+            <img src={src} alt=''></img>
+          </div>
+        ))}
+        <section className="banner" id="home">
+            <Row className="align-items-center ">
+              <Col xs={12} md={6} xl={7} className='bannerimg-parent'>
+                <div className="bannerimg">
+                  <img src={bannerimg} alt=""></img>
+                </div>
+              </Col>
+              <Col xs={12} md={6} xl={5} className='headerimg-parent'>                 
+                      <img className="imgheader" src={bannerimg} alt="" />
+              </Col>
+            </Row>
+        </section>
+      </div>
     </Router>
   );
 };
