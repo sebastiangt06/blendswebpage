@@ -134,9 +134,8 @@ export const Contact = () => {
               </Row>
               <Row className="h2-parent">
                 <p>
-                  ¡Nos encantaría saber de usted! Envíenos preguntas, elogios,
-                  solicitudes de tiendas o simplemente salude. ¡Phil mismo
-                  podría incluso leerlo!
+                  ¡Nos encantaría saber de ti! Envíanos preguntas, elogios, ideas,
+                  solicitudes de productos o simplemente saludanos.
                 </p>
               </Row>
             </div>

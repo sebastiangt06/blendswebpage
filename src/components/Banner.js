@@ -14,7 +14,7 @@ export const Banner = () => {
 
   const images = [meter1, meter2, meter3];
 
-  const animation = { duration: 3000, easing: (t) => t };
+  const animation = { duration: 6000, easing: (t) => t };
   const [opacities, setOpacities] = React.useState([]);
 
   const [sliderRef] = useKeenSlider({

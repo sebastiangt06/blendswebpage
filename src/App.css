@@ -38,7 +38,11 @@
 	src: url('./assets/font/CooperBlack-Italic.ttf');
 	font-weight: 700;
 }
-
+@font-face {
+	font-family: Pacifico;
+	src: url('./assets/font/Pacifico-Regular.ttf');
+	font-weight: 700;
+}
 
 /************ Default Css ************/
 * {
@@ -343,6 +347,28 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   flex-direction: row ;
   
 }
+.fader {
+  height: 1000px;
+  width: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.fader__slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.fader img {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
 @keyframes updown {
     0% {
         transform: translateY(-20px);
@@ -391,15 +417,15 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 100%;
   margin: 0 auto;
   position: relative;
+  
 }
 
-.skill-slider .item img{
-  width: 50%;
-  margin: 0 auto 15px auto;
+.item{
+  object-fit: cover;
+  height: max-content;
 }
-.skill-slider .item2 img{
-  width: 60%;
-  margin: 20px auto 15px auto;
+.skill-slider .item img{
+ 
 }
 .background-image-left{
   position: absolute;
@@ -408,28 +434,31 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 20%;
   z-index: -4;
 }
-.fader {
-  height: 1000px;
+
+.section{
+  display: flex;
+  justify-content: center;
   width: auto;
-  position: relative;
-  overflow: hidden;
+  height: 600px;
+  
 }
-
-.fader__slide {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-}
-
-.fader img {
-  background-color: transparent;
-  width: 100%;
-  height: 100%;
+.section img{
+  width: 0px;
+  flex-grow: 1;
   object-fit: cover;
-  position: absolute;
-}
+  opacity: .8;
+  transition: .7s ease;
+  border: 3px solid var(--pridepurple) transparent ;
+  border-radius: 10px;
+  filter: brightness(70%) blur(3px);
 
+}
+.section img:hover{
+  cursor:crosshair;
+  width: 150px;
+  opacity: 1;
+  filter: contrast(120%) brightness(100%) blur(0px);
+}
 .item{
   align-items: center;
 }
@@ -607,6 +636,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   align-items: center;
 }
 
+
 /********* CONTACT ***************/
 .contact{
   background: linear-gradient(90.21deg, var(--pridepurple) -5.91%, var(--torqouise) 111.58%);
@@ -618,9 +648,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   height: 450px;
   
 }
-
-
-
 .contact h2{
   font-size: 45px;
   font-weight: 700;
