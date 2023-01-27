@@ -32,16 +32,16 @@ export const Skills = () => {
       items: 1,
     },
   };
-  
+
 
   return (
     <section className="skill" id="skills">
     <div className="section">
-      <img src={meter1}></img>
-      <img src={meter2}></img>
-      <img src={meter3}></img>
-      <img src={meter4}></img>
-      <img src={meter5}></img>
+      <img loading='lazy' src={meter1}></img>
+      <img loading='lazy' src={meter2}></img>
+      <img loading='lazy' src={meter3}></img>
+      <img loading='lazy' src={meter4}></img>
+      <img loading='lazy' src={meter5}></img>
     </div>
       <div className="skill-box">
       <h2 className="skill-header">Todo en un sabor divertido</h2>
