@@ -2,9 +2,7 @@ import { Container, Row, Col, Tab } from "react-bootstrap";
 import Nav from "react-bootstrap/Nav";
 import { ProjectCard } from "./ProjectCard";
 import colorSharp2 from "../assets/img/curvesbottom.png";
-import projImg1 from "../assets/img/projImg1.png";
-import projImg2 from "../assets/img/appcostos.jpg";
-import projImg3 from "../assets/img/workprogress3.jpg";
+
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 
@@ -14,7 +12,7 @@ export const Projects = () => {
       title: "Warbug Aplicacion de ingresos y egresos",
       description:
         "Aplicacion que lista los ingresos y egresos de una empresa, protegido con sistema de login, ideal para administradores y usuarios",
-      imgUrl: projImg2,
+      imgUrl: '',
       gitUrl: "https://github.com/Warbug-MisionTic/Warbug",
       projUrl: "",
     },
@@ -22,7 +20,7 @@ export const Projects = () => {
       title: "Warbug Store Ecommerce",
       description:
         "Tienda Ecommerce, desarrollada para la venta de articulos tecnologicos, protegida con sistema de login, sistema de administrador que permite ver las ventas hechas y su suma total",
-      imgUrl: projImg1,
+      imgUrl: '',
       gitUrl: "https://github.com/Warbug-MisionTic/DesarrolloWeb-Ciclo4",
       projUrl: "",
     },
@@ -33,7 +31,7 @@ export const Projects = () => {
       title: "Calculadora de emisiones GEI",
       description:
         "Calculadora de emisiones de gases de efecto invernadero, dirigida a personas que deseen saber cuantas emisiones generan dia a dia",
-      imgUrl: projImg3,
+      imgUrl: '',
       gitUrl: "",
       projUrl: "",
     },
