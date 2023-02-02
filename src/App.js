@@ -7,6 +7,7 @@ import { ProjectCard } from './components/ProjectCard';
 import { Footer } from './components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Contact } from './components/Contact';
+import { SkillsHoverable } from './components/SkillsHoverable';
 function App() {
   return (
     <div className="App">

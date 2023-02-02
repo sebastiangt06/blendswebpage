@@ -424,9 +424,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   object-fit: cover;
   height: max-content;
 }
-.skill-slider .item img{
- 
-}
+
 .background-image-left{
   position: absolute;
   top: 0%;
@@ -437,12 +435,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .section{
   display: flex;
+  flex-direction: row;
   justify-content: center;
   width: auto;
-  height: 600px;
-  
+  height: 600px; 
 }
-.section img{
+.img-hov{
   width: 0px;
   flex-grow: 1;
   object-fit: cover;
@@ -450,17 +448,73 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   transition: .7s ease;
   border: 3px solid var(--pridepurple) transparent ;
   border-radius: 10px;
-  filter: brightness(70%) blur(3px);
-
+  filter: brightness(10%) blur(3px);
+  overflow: hidden;
 }
-.section img:hover{
+
+/* .section img:hover {
+  cursor:crosshair;
+  width: 150px;
+  opacity: 1;
+  filter: contrast(120%) brightness(100%) blur(0px);
+} */
+
+.item{
+  align-items: center;
+}
+
+.text-hover{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--pridepurple);
+  border-radius: 10px;
+  background-color: var(---ghostwhite);
+  color: var(--pridepurple);
+  position: absolute;
+  margin-top: -10rem;
+  margin-left: 300px;
+  
+}
+.img-hov::before {
+  content: "";
+  background: linear-gradient(90.21deg, rgba(54, 85, 170, 0.8) -5.91%, rgba(47, 188, 176, 0.8) 111.58%);
+  opacity: 1;
+  position: absolute;
+  width: 100px;
+  height: 0;
+  transition: 0.4s ease-in-out;
+}
+.img-hov:hover{
   cursor:crosshair;
   width: 150px;
   opacity: 1;
   filter: contrast(120%) brightness(100%) blur(0px);
 }
-.item{
-  align-items: center;
+.img-hov:hover::before {
+  height: 100%;
+}
+.imghov-text {
+  position: absolute;
+  text-align: center;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+  width: 100%;
+}
+.img-hov:hover .imghov-text {
+  top: 50%;
+  opacity: 1;
+  
+}
+.imghov-text h4 {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1.1em;
 }
 
 /********** PROJECTS css ***************/

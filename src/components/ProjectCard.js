@@ -1,7 +1,6 @@
 import { Col } from "react-bootstrap";
 import { useEffect } from "react";
 import Swal from "sweetalert2";
-
 export const ProjectCard = ({
   title,
   description,

@@ -1,6 +1,7 @@
 import { Container, Row, Col, Tab } from "react-bootstrap";
 import Nav from "react-bootstrap/Nav";
 import { ProjectCard } from "./ProjectCard";
+import imgUrl from '../assets/img/cafe.jpg'
 import colorSharp2 from "../assets/img/curvesbottom.png";
 
 import "animate.css";
@@ -12,7 +13,7 @@ export const Projects = () => {
       title: "Warbug Aplicacion de ingresos y egresos",
       description:
         "Aplicacion que lista los ingresos y egresos de una empresa, protegido con sistema de login, ideal para administradores y usuarios",
-      imgUrl: '',
+      imgUrl: imgUrl,
       gitUrl: "https://github.com/Warbug-MisionTic/Warbug",
       projUrl: "",
     },
