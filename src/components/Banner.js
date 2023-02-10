@@ -7,7 +7,7 @@ import bannerimg from "../assets/img/bannerimg.png";
 import meter1 from "../assets/img/bannerblends12.jpg";
 import meter2 from "../assets/img/bannerblends23.jpg";
 import meter3 from "../assets/img/bannerblends32.jpg";
-import meter4 from "../assets/img/navbar.png";
+import meter4 from "../assets/img/navbar3.png";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 
@@ -53,11 +53,9 @@ export const Banner = () => {
           </div>
         ))}
         <section className="banner" id="home">
-            <Row className="align-items-center ">
+            <Row className="align-items-center">
               <Col xs={12} md={6} xl={7} className='bannerimg-parent'>
-                <div className="bannerimg">
-                  <img src={bannerimg} alt=""></img>
-                </div>
+                
               </Col>
               <Col xs={12} md={6} xl={5} className='headerimg-parent'>                 
                       <img className="imgheader" src={bannerimg} alt="" />
@@ -65,7 +63,6 @@ export const Banner = () => {
             </Row>
         </section>
       </div>
-      <img src={meter4} alt=''></img>
     </Router>
   );
 };
